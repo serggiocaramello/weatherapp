@@ -1,5 +1,17 @@
 <template>
   <div class="current-weather">
+    <div class="current-weather--buttons p-1">
+      <router-link to="/login" class="btn btn-light">Login</router-link>
+      <span>or</span>
+      <router-link to="/register" class="btn btn-outline">Register</router-link>
+      <span>to save places.</span>
+    </div>
+    <div class="current-weather--search p-1 mt-1">
+      <a href="#" class="btn btn-outline">Search for places</a>
+      <span class="icon-background">
+        <font-awesome-icon class="map-marker-btn" icon="map-marker-alt" />
+      </span>
+    </div>
     <div class="current-weather__img--container">
       <img class="current-weather__img" src="@/assets/Shower.png" alt="" />
     </div>
@@ -38,15 +50,59 @@ export default {
   justify-content: space-between;
 }
 
+.current-weather--buttons {
+  font-size: 0.95em;
+  color: $text-color;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  & > * {
+    margin-right: 0.5em;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.current-weather--search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon-background {
+    background-color: $text-color;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    text-align: center;
+    line-height: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $primary-color;
+      border: 1px solid $text-color;
+      .map-marker-btn {
+        color: $text-color;
+      }
+    }
+    .map-marker-btn {
+      color: $primary-color;
+    }
+  }
+}
+
 .current-weather__img--container {
   position: relative;
   text-align: center;
   overflow-x: hidden;
+  min-height: 250px;
 }
+
 .current-weather__img {
   transform: scale(0.75);
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 .current-weather__img--container::before {
@@ -65,7 +121,7 @@ export default {
 
 .current-weather--temp {
   &-value {
-    font-size: 9em;
+    font-size: 7em;
   }
   &-unit {
     font-size: 3em;

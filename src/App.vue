@@ -1,11 +1,5 @@
 <template>
   <router-view />
-  <div id="nav">
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/profile">Profile</router-link> -->
-  </div>
-
-  <h1>Soy un h2</h1>
 </template>
 
 <script>

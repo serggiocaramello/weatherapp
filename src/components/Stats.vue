@@ -12,6 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 .stats {
-  background-color: background-dark;
+  background-color: $background-dark;
 }
 </style>
